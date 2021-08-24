@@ -1,0 +1,5 @@
+package fi.palvelinohjelmointi.web;
+
+public class FirstController {
+
+}

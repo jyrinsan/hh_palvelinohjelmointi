@@ -1,0 +1,17 @@
+package fi.palvelinohjelmointi.FirstApplication.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class FirstController {
+	
+	@RequestMapping("*")
+	@ResponseBody
+	public String firstGreeting() {
+		return "moi";
+	}
+
+}
+
