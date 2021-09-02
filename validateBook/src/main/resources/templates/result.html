@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Validation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+    <p th:text="'id: ' + ${book.id}" />
+    <p th:text="'message: ' + ${book.title}" />
+    <p th:text="'message: ' + ${book.author}" />
+    <a href="/add">Submit another book</a>
+</body>
+</html>

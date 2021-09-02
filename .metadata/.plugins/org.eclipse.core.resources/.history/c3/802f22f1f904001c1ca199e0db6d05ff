@@ -1,6 +1,0 @@
-package fi.palvelinohjelmointi.web;
-
-@Controller
-public class FirstController {
-
-}
