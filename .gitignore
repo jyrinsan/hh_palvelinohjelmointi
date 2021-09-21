@@ -2,3 +2,4 @@ demot/
 /.metadata/
 bootstrap-5.1.1-dist
 malliratkaisut
+**/application.properties
