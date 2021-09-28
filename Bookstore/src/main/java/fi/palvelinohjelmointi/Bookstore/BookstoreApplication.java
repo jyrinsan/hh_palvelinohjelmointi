@@ -9,6 +9,8 @@ import fi.palvelinohjelmointi.Bookstore.domain.Book;
 import fi.palvelinohjelmointi.Bookstore.domain.BookRepository;
 import fi.palvelinohjelmointi.Bookstore.domain.Category;
 import fi.palvelinohjelmointi.Bookstore.domain.CategoryRepository;
+import fi.palvelinohjelmointi.Bookstore.domain.User;
+import fi.palvelinohjelmointi.Bookstore.domain.UserRepository;
 
 @SpringBootApplication
 public class BookstoreApplication {
@@ -18,7 +20,7 @@ public class BookstoreApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner studentDemo(BookRepository repository, CategoryRepository categoryRepository) {
+	public CommandLineRunner studentDemo(BookRepository repository, CategoryRepository categoryRepository, UserRepository urepository) {
 		return (args) -> {
 			System.out.println("save a couple of books");
 			Category cat1 = categoryRepository.save(new Category("romaani"));
@@ -35,6 +37,14 @@ public class BookstoreApplication {
 			for (Book book : repository.findAll()) {
 				System.out.println(book.toString());
 			}
+			
+			// Create users: admin/admin user/user
+			User user1 = new User("user",
+			"$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER");
+			User user2 = new User("admin",
+			"$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN");
+			urepository.save(user1);
+			urepository.save(user2);
 
 		};
 	}
